@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" class='form-group' [formGroup] = 'reactive' (ngSubmit)='sendForm(reactive)' >
+        <fieldset>
+            <legend>
+                <div>
+                <label for="">Name</label>
+                <input class="form-control" type="text" name="name" formControlName='name'>
+            </div>
+            <div *ngIf='name.touched && name.invalid'>
+                    <div *ngIf='name.errors.minlength' class='alert alert-danger'>min length 3</div>
+                    <div *ngIf='name.errors.required' class='alert alert-danger'>provide name</div>
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="password" class='form-control' name='pass' formControlName='pass'>
+            </div>
+            <div *ngIf='pass.touched && pass.invalid'>
+                <div class='alert alert-danger' *ngIf='pass.errors.pattern'>hint: owner name      </div>
+
+            </div>
+
+            <button type="submit">sub</button>
+            </legend>
+        </fieldset>
+    </form>
+</body>
+</html>

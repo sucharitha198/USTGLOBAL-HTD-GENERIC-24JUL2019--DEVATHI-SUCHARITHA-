@@ -1,0 +1,51 @@
+<div class="col-md-4 offset-md-4 mt-5 card card-body">
+    <h4 class="text-center">Register!!!</h4>
+<form action="" method="POST" role="form" [formGroup]='registerForm'(ngSubmit)='printForm(registerForm)'>
+  <legend>Form title</legend>
+    <div class="form-group">
+        <label for="">Name</label>
+        <input type="text" class="form-control" id="name" name='name'
+         placeholder="Enter First Name" formControlName='name'>
+      <div *ngIf='name.touched && name.invalid'>
+        <div class="alert alert-danger"
+        *ngIf='name.errors.minlength'>minimum length is 3</div>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="">Email id</label>
+        <input type="email" class="form-control" id="email" name='email'
+         placeholder="ex:name@gmail.com" formControlName='email'>
+         <div *ngIf='email.touched && email.invalid'>
+                <div class="alert alert-danger"
+                *ngIf='email.errors.noSpace'>no space is accepted</div>
+              </div>
+    </div>
+    <div class="form-group">
+            <label for="">Date of Birth</label>
+            <input type="date" class="form-control" id="date">
+        </div>
+    <div class="form-group">
+        <label for="">Mobile Number</label>
+        <input type="number" class="form-control" id="mbl" 
+        name='mbl' formControlName='mbl'>
+    </div>
+    <div class="form-group">
+            <label for="">Password</label>
+            <input type="password" class="form-control" id="password">
+            <div *ngIf='psd.touched && psd.invalid'>
+              <div class='alert alert-danger' *ngIf=psd.errors.pattern>
+                <div>Password doesn't match</div>
+
+              </div>
+            </div>
+
+        </div>
+   
+    <div>    
+    <button class="btn-outline-success"type="submit">Submit</button>
+
+    <button type="reset" class="btn-outline-danger">Reset</button>
+</div>
+</form>
+
+</div>
