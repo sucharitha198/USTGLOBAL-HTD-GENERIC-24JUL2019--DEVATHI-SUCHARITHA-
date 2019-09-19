@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>arrays</title>
+</head>
+<body>
+    <script>
+        console.log('-----without using new keyword-----');
+        console.log('---object 1--');
+        var fruits = ['Apples','Mango','Banana','JAckfruit'];
+        console.log(fruits);
+        console.log('---object 2--')
+        var Birds = ['pigeon','parrot','sparrow'];
+        console.log(Birds);
+        console.log('---object 3--')
+        var branches = ['ECE','MEC','CIVIL','EEE'];
+        console.log([branches]);
+        console.log('---object 4--');
+        var person = ['Raj',20,'white',5.5];
+        console.log(person);
+        console.log('---object 5--');
+        var states = ['Andhra','karnataka','tamilnadu','madhya pradesh'];
+        console.log(states);
+
+        console.log('---Objects using new keyword---');
+        console.log('---object 1--');
+        var fruits = new Array('Apples','Mango','Banana','JAckfruit');
+        console.log(fruits);
+        console.log('---object 2--');
+        var Birds = new Array();
+        Birds[0]='pigeon';
+        Birds[1]='peacock';
+        Birds[2]='parrot';
+        Birds[3]='sparrow';
+        console.log(Birds);
+        console.log('---object 3--');
+        var person = new Array('Raj',20,'white',5.5);
+        console.log([person]);
+        console.log('---object 4--');
+        var states = new Array('Andhra pradesh','karnataka','tamilnadu','madhya pradesh')
+        console.log([states]);
+        console.log('---object 5--');
+        var Address = new Array(18-427,'B.K.M street','kadapa','Andhra Pradesh',516001);
+        console.log([Address]);
+    </script>
+</body>
+</html>

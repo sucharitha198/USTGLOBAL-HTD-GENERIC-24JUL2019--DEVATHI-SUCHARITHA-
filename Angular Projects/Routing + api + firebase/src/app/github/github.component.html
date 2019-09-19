@@ -1,0 +1,10 @@
+<div class="row">
+            <div class="container">
+                <div *ngFor = 'let i of user' class="col-md-2 float-left offset-1 mt-5 card">
+                    <h4>{{i.id}}</h4>
+                    <img src="{{i.avatar_url}}" alt="" class="img-thumbnail">
+                     <h4>{{i.node_id}}</h4>
+                     <a href="{{i.url}}" class="btn btn-dark">for more information</a>
+                </div>
+            </div>
+</div>

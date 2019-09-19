@@ -1,0 +1,24 @@
+<div class="col-md-12">
+    <table class="table table-bordered table-hover thead-dark">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>photo</td>
+                <td>NAME</td>
+                <td>FOLLOWERS</td>
+                <td>TYPE</td>
+                <td>DELETE</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of users'>
+                <td>{{user.id}}</td>
+                <td><img src="{{user.avatar_url}}" alt=""></td>
+                <td>{{user.login}}</td>
+                <td><a href="{{user.followers_url}}">{{user.followers_url}}</a></td>
+                <td>{{user.type}}</td>
+                <td><button class="btn btn-outline-danger" (click)='deleteUser(data)'>Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

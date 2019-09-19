@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form</title>
+</head>
+<body>
+<form action="">
+<div>
+     <label for="Name">Name:</label>
+     <input type="text" name="name"  id="name" required placeholder="Enter your name">
+</div>
+<div>
+    Name: <input type="text" name="name"  id="name" required placeholder="Enter your name">
+</div>
+<div>
+     <label for="psd">Password:</label>
+     <input type="password" name="psd" id="psd" required>
+</div>
+<div>
+    <label for="em">Email:</label>
+    <input type="email" name="email" id="email" required>
+</div>
+<div>
+    <label for="mb">Mobile No.</label><br>
+    <input type="tel" name="mb" id="mb" required>
+</div>
+<div>
+    <label for="gndr">Gender</label><br>
+    <input type="radio" name="gndr" id="gndr">Male
+    <input type="radio" name="gndr" id="gndr">Female
+    <input type="radio" name="gndr" id="gndr">others
+</div>
+<div>
+    <label for="date">Joining Date</label>
+    <input type="date" name="date" id="date">
+</div>
+<div>
+    <label for="mon">Joining months</label>
+    <select name="month" id="month" required>
+    <option value="0" selected disabled>Select</option>
+    <option value="jan">January</option>
+    <option value="feb">February</option>
+    <option value="mar">March</option>
+    <option value="apr">April</option>
+    <option value="may">May</option>
+    <option value="jun">June</option>
+    <option value="jul">July</option>
+    <option value="aug">August</option>
+    <option value="sep">September</option>
+    <option value="oct">October</option>
+    <option value="nov">November</option>
+    <option value="dec">December</option>
+</select>
+    </div>
+    <div>
+        <label for="file">Upload a document</label>
+        <input type="file" name="upload" id="upload">
+    </div>
+    <div>
+        <input type="checkbox" name="chk" id="chk">
+        <label for="chk">I agree</label>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <style>
+        body{
+        margin-left:25%;
+        margin-top:15%;
+        margin-right: 50%;
+        }
+    </style>
+    </head>
+<body>
+    <legend>
+        <fieldset>
+            <form onsubmit= "return validate()" action="">
+                <div>
+                <label for="psd">Password</label><br>
+                <input  type="password" name="pass" id="pass">
+            </div>
+            <div>
+                    <label for="psd">Confirm Password</label><br>
+                    <input type="password" name="cpass" id="cpass">
+                </div>
+                <label for="text" id="error"></label>
+            <input type="submit" value="login" name="loginSubmit">
+        </fieldset>
+    </legend>
+   </form>
+<script src="/ass5/error.js"></script>
+</body>
+</html>

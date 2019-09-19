@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <input type="search" class = "form-control" [(ngModel)]='car'>
+</div>
+
+
+<table class="table-bordered table-hover mt-5 offset-md-3">
+    <thead class="bg-primary">
+<tr>    <th>Name</th>
+        <th>Model</th>
+        <th>Year of Release</th>
+        <th>Cost</th>
+        <th>No. of units sold</th>
+        <th>Update</th>
+        <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of carService.cars">
+            <td>{{car.name}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.release}}</td>
+            <td>{{car.cost}}</td>
+            <td>{{car.units}}</td>
+            <td><button class="btn btn-outline-warning" (click)='updateUser(car)'>Update</button></td>
+            <td><button class="btn btn-outline-danger" (click)='deleteUser(car)'>Delete</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="\ass5\form.css">
+</head>
+<body>
+    <div id='form'>
+    <legend>
+        <fieldset>
+            <form action="" method="">
+                <div>
+                <label for="uname">UserName</label><br>
+                <input  type='text' name="nme" id="nme" required>
+            </div>
+            <div>
+                <label for="psd">Password</label><br>
+                <input  type="text" name="psd" id="psd" required>
+            </div>
+            <input type="button" value="login" name="loginSubmit" id="btn" onclick="AddRow()">
+            </form>
+        </fieldset>
+    </legend>
+</div>
+<div id='table'>
+<table border="2px" id="show">
+    <thead>
+    <tr>
+        <td>User Name</td>
+        <td>Password</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<script>
+    var list1 =[];
+var list12 =[];
+var n=1;
+var x=0;
+function AddRow(){
+    var AddRown = document.getElementById('nme');
+    var NewRow = AddRown.insertRow(n);
+    list1[x] = document.getElementById("nme").value;
+    list2[x] = document.getElementById("psd").value;
+
+    var cell1 = NewRow.insertcell(0);
+    var cell2 = NewRow.insertcell(1);
+    
+    cell1.innerHTML = list1[x];
+    cell2.innerHTML = list2[x];
+    n++;
+    x++;
+}
+</script>
+</body>
+</html>

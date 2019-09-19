@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <p class="text-center">TECHNOLOGY</p>
+</nav>
+<div class="row">
+        <div class="container">
+            <div *ngFor = 'let news of indianNews' class="col-md-3 float-left offset-1 card">
+                    <a href="{{news.url}}" ><img src="{{news.urlToImage}}" alt="" class="img-thumbnail img-top"></a>
+                 <h4>{{news.title}}</h4>
+            </div>
+        </div>
+</div>

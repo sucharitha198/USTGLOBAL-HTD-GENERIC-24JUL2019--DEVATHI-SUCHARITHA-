@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <input type="search" class = "form-control" [(ngModel)] ='user'>
+</div>
+
+
+<table class="table-bordered table-hover mt-5 offset-md-3">
+    <thead class="bg-primary">
+        <tr>
+        <th>index</th>
+        <th>Name</th> 
+        <th>Email</th>
+        <th>Phn NO</th>
+        <th>Update</th>
+        <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of firebaseService.users | filter: user ; index as i">
+            <td>{{i+1}}</td>
+            <td>{{user.name | reduce :5}}</td>
+            <td>{{user.email | uppercase}}</td>
+            <td>{{user.phno}}</td>
+            <td><button class="btn btn-outline-warning" (click)='updateUser(user)'>Update</button></td>
+            <td><button class="btn btn-outline-danger" (click)='deleteUser(user)'>Delete</button></td>
+        </tr>
+    </tbody>
+</table>

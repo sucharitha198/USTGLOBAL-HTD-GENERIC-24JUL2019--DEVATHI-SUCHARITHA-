@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form 1 validation</title>
+    <link rel="stylesheet" href="/ass5/form1.css">
+</head>
+<body>
+
+ <form action="">
+     <div>
+     <label for="frst name">First Name</label><br>
+     <input type="text" onkeyup="validate()" name="frstname" id="frstname">
+    </div>
+    <div> 
+    <label for="lst name">Last Name</label><br>
+     <input type="text" onkeyup="validate()" name="lstname" id="lstname">
+    </div>
+    <div>
+        <label for="cmpy name">Company Name</label><br>
+        <input type="text" onkeyup="validat()" name="cmpyname" id="cmpnyname">
+    </div>
+    <div>
+        <label for="emp id">Emp ID</label><br>
+        <input type="text" name="emp id" id="emp id">
+    </div>
+    <div>     
+        <label for="date">Date of Joining</label><br>
+        <input type="text" name="date" id="date">
+    </div>
+    <div>
+        <label for="gndr">Gender</label><br>
+        <input type="radio" name="m" id="m">Male
+        <input type="radio" name="m" id="m">Female
+        <input type="radio" name="m" id="m">Others
+    </div>
+    <div>
+        <label for="skill">Skills</label><br>
+        <input type="checkbox" name="java" id="java">java <br>
+        <input type="checkbox" name="sql" id="sql">Sql <br>
+        <input type="checkbox" name="j2ee" id="j2ee">J2EE <br>
+        <input type="checkbox" name="hiber" id="hiber">Hibernate     </div>
+    </div>
+    <div id="button">
+        <button type="submit" name="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
+    </form>   
+    <script src="/ass5/form1.js"></script>
+</body>
+</html>

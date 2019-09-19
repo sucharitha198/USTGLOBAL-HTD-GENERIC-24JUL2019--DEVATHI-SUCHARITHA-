@@ -1,0 +1,26 @@
+form{
+    margin: 20px
+}
+#lst{
+    margin-left: 60px;
+    width:150px;
+}
+#strt{
+    padding-left: 190px;
+}
+#address{
+    margin-top:20px;
+}
+input[type="text"]{
+margin-top: 15px;
+height:20px;
+}
+#frst{
+    width:150px;
+}
+#city{
+    width:150px;
+}
+#country{
+    padding-left: 55px;
+}

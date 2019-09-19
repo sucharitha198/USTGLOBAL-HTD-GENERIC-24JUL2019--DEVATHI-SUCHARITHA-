@@ -1,0 +1,28 @@
+<div class="col-md-5 offset-3 mt-5 card card-body">
+   <form action="" class='form-group' #form='ngForm' (ngSubmit)='send(form)'>
+       <h2 class='text-center thead-dark'>Register Form!!!!</h2>
+    <div>
+        <label for="name">Username</label>
+        <input type="text" name="name" id="name" class="form-control" #name='ngModel' ngModel
+        placeholder="Enter your name" minlength="3" required>
+    </div>
+    <div *ngIf='name.touched && name.invalid'>
+            <div class="alert alert-danger">
+                This input field required text
+            </div>
+            <div class="alert alert-danger" *ngIf='name.errors.minlength'>Minimum Length is 3</div>
+    </div>
+    <div>
+        <label for="name">Password</label>
+        <input type="password" name="password" id="password" class="form-control" #password='ngModel'ngModel
+        placeholder="Enter Password" minlength="5" required pattern='suchi'>
+    </div>
+    <div *ngIf='password.touched && password.invalid'>
+            <div class="alert alert-danger">
+                Password is required
+            </div>
+            <div class="alert alert-danger" *ngIf='password.errors.pattern'>Pattern does not match</div>
+    </div>
+        <button type="submit" class="bg bg-success">Submit</button>
+   </form>
+</div>

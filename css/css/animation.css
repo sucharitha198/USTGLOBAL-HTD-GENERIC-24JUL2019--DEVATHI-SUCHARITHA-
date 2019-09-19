@@ -1,0 +1,56 @@
+ul{
+margin-top: 200px;
+margin-left: 200px
+
+}
+li{
+display: inline-block;/*to turn ul dots*/
+background-color: black;
+width: 10px;
+height: 100px; /*if we give width and height same =circle*/
+border-radius: 50px;
+margin-left: 60px;/*space b/w rounds*/
+animation: glow 1s infinite linear;
+}
+@keyframes glow{    /*for writing animation we have to write rules for keyframes*/
+0%, 25%, 50%,75%, 100%{
+transform:scale(0.5,0.5);
+}
+50%{
+transform: scale(2 , 2);
+}
+}
+li:nth-child(1){
+    background-color:blueviolet;
+    animation-delay: 0.1s;
+    box-shadow: 0 0 25px black;
+
+}
+li:nth-child(2){
+    background-color:greenyellow;
+    animation-delay: 0.3s;
+    box-shadow: 0 0 25px black;
+
+}
+li:nth-child(3){
+    background-color:rgb(23, 24, 23);
+    animation-delay: 0.5s;
+    box-shadow: 0 0 35px black;
+
+}
+li:nth-child(4){
+    background-color:rgb(50, 71, 19);
+    animation-delay: 0.7s;
+    box-shadow: 0 0 45px black;
+}
+li:nth-child(5){
+    background-color:blue;
+    animation-delay: 0.9s;
+    box-shadow: 0 0 15px black;
+
+}
+li:nth-child(6){
+    background-color:rgb(99, 99, 223);
+    animation-delay: 0.8s;
+    box-shadow: 0 0 15px black;
+}

@@ -1,0 +1,29 @@
+div{
+    margin-top: 270px;
+    margin-left: 250px;
+}
+span{
+    display: inline-block;
+    margin: 25px;
+    box-shadow: 0 0 30px violet;
+    padding: 20px;
+    animation: movement  2s infinite linear;
+    /* background: violet; */
+    background: linear-gradient(45deg,blue,red); 
+    animation-delay:0.1s;
+    border-radius:10px;
+    font-style: italic;
+    font-size: 20px;
+
+}
+@keyframes movement {
+    0%{
+        transform: skew(10deg,20deg)
+    }
+    50%{
+        transform:skew(50deg,20deg)
+    }
+    100%{
+        transform:skew(10deg,20deg)
+    }
+}

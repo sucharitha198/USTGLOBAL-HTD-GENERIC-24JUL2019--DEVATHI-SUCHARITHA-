@@ -1,0 +1,22 @@
+.img-div{
+    float: left;  /*for assining  side by side*/
+    border: 3px solid black;
+    border-radius: 25px;
+    overflow: hidden;/*to fix the image inside border*/
+    text-align: center;/*text in center*/
+    margin-left: 10px;
+}
+img{
+    width: 200px;
+    height: 250px;
+    transition: all 2s;/* to reduce speed of zooming*/
+
+}
+img:hover{
+    transform: scale(1.2,1.2);/*for 2d zooming effect*/
+}
+.desc{
+    padding-top: 30px;/*space b/w the img name and the img*/
+    font-family: cursive;
+
+}

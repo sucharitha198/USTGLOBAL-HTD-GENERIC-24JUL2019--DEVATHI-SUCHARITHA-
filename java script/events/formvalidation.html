@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin-left: 25%;
+            margin-right: 50%;
+        }
+    </style>
+</head>
+<body>
+    <legend>
+        <fieldset>     
+               <form onsubmit='validateForm()' action="/events/welcome.html" method="get">
+            <div>
+                <label for="">UserName</label>
+            </div>
+            <div></div>
+                <input onkeyup="validateForm()" name = 'uname' type="text" required>
+            </div>
+            <div>
+                <label for="">Password</label>
+            </div>
+            <div>
+                <input onkeyup="validateForm()" name = 'psd' type="password" required>
+            </div>
+            <div>
+               <input type="submit" name='loginSubmit' value="Login" disabled>    
+            </div>
+            <script src="/events/formvalidation.js"></script>
+               </form>
+        </fieldset>
+     </legend>
+</body>
+</html>

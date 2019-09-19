@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EmployeForm</title>
+    <style>
+        body{
+        margin-left: 25%;
+        margin-right: 50%;
+        }
+    </style>
+</head>
+<body>
+    <legend>
+        <fieldset>
+            <form name ="employeeForm" onsubmit="return validate()">
+                <div>
+                <label for="password">Password</label><br>
+                <input type="password" name="pass" placeholder="Enter password" required>
+            </div>
+            <div>
+                <label for="cpass">Confirm Password</label><br>
+                <input type="password" name = "cpass" placeholder="Confirm Password" required>
+            </div>
+            <div>
+                <input type="submit" value="submit">
+            </div>
+            </form>
+        </fieldset>
+    </legend>
+  <!-- Hello| <span style="visibility: hidden">Data</span>|Welcome -->
+  Hello| <span style="display :none">Data</span>|Welcome
+  
+    <script src="formvalidation1.js"></script>
+</body>
+</html>

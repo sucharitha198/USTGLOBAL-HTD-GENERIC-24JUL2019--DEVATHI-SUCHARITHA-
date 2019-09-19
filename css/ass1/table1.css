@@ -1,0 +1,10 @@
+#head{
+font-style: italic;
+background-color:gray;
+
+}
+table,th,td {
+    border:1px solid black;
+    background-color:gray;
+    border-collapse: collapse;
+}

@@ -1,0 +1,85 @@
+div{
+    margin-top: 250px;
+    margin-left: 15px;
+}
+span{
+    display: inline-block;
+    padding: 25px;
+    margin: 20px;
+    box-shadow: 0 0 15px black;
+    animation: movement 1s infinite linear;
+}
+/* @keyframes movement{
+    0%{
+        transform: translateY(0px)
+    }
+    50%{
+        transform: translateY(200px)
+    }
+    100%{
+        transform: translateY(0px)
+    }
+
+} */
+@keyframes movement{
+    0%{
+        transform: translateX(0px)
+    }
+    50%{
+        transform: translateX(150px)
+    }
+    100%{
+        transform: translateX(0px)
+    }
+
+}
+span:nth-child(1){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.1s;
+    box-shadow: 0 0 15px black;
+}
+span:nth-child(2){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.2s;
+    box-shadow: 0 0 25px black;
+}
+span:nth-child(3){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.3s;
+    box-shadow: 0 0 15px black;
+}
+span:nth-child(4){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.4s;
+    box-shadow: 0 0 15px black;
+}
+span:nth-child(5){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.5s;
+    box-shadow: 0 0 15px black;
+}
+span:nth-child(6){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.6s;
+    box-shadow: 0 0 15px black;
+}
+span:nth-child(7){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.7s;
+    box-shadow: 0 0 15px black;
+}
+span:nth-child(8){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.8s;
+    box-shadow: 0 0 15px black;
+}
+span:nth-child(9){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.9s;
+    box-shadow: 0 0 15px black;
+}
+span:nth-child(10){
+    background: linear-gradient(45deg,black,rgb(113, 134, 113)); 
+    animation-delay:0.11s;
+    box-shadow: 0 0 15px black;
+}

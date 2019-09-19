@@ -1,0 +1,24 @@
+<div class="col-md-4 offset-md-4 mt-4">
+    <h3 class="text-center">Add Cars!!</h3>
+    <form action="" #carform='ngForm' (ngSubmit)='postCar(carform)' >
+    <input type="hidden" name="id" #id='ngModel' [(ngModel)]='carService.selectedCar.id'> <!--id for put-->
+    
+    <input type="text" name="name" id="name" class="form-control mb-3 mt-3"
+     placeholder="Enter car name.."  #name='ngModel' [(ngModel)]='carService.selectedCar.name'
+     required minlength="3">
+    
+    <input type="text" name="model"  id="model" class="form-control mb-3 mt-3" 
+     placeholder="Enter model.."  required #model='ngModel' [(ngModel)]='carService.selectedCar.model'>
+ 
+    <input type="number" name="release" id="release" class="form-control mb-3 mt-3" 
+    placeholder="Enter year of Release.."   required #release='ngModel' [(ngModel)]='carService.selectedCar.release'>
+
+    <input type="tel" name="cost" id="cost" class="form-control mb-3 mt-3" 
+    placeholder="Enter cost of the car.." required #cost='ngModel' [(ngModel)]='carService.selectedCar.cost'>
+
+    <input type="tel" name="units" id="units" class="form-control mb-3 mt-3"
+    placeholder="No. of units sold.."  required #units='ngModel' [(ngModel)]='carService.selectedCar.units'>
+         
+    <button type="submit" class="btn btn-outline-success float-right">Submit</button>
+    </form>
+</div>

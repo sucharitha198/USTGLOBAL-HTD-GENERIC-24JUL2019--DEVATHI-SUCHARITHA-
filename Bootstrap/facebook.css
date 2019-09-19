@@ -1,0 +1,28 @@
+nav{
+    background-color: rgba(15, 15, 139, 0.877);
+} 
+ #button{
+    background-color: rgb(61, 197, 61);
+    color:white;
+    border:none;
+}
+legend{
+    text-align: center;
+    padding-top: 5%;
+}
+body{
+    background-color:rgb(207, 205, 205); 
+}
+h6{
+    text-align: center;
+}
+#size{
+    width:50%;
+    margin-left:170px;
+}
+.btn {
+width:100%;
+}
+a{
+    padding-left:10px;
+}

@@ -1,0 +1,27 @@
+table, th, td{
+    text-align: center;
+    padding: 5px; /*space beween content*/
+    border-radius: 10px;
+    cursor: pointer;/*change into hand cursor*/
+    font-style: oblique;
+    font-size: 30px;/*content size inside table*/
+}
+table{
+    width:100%;/*table will come full screen*/
+    
+}
+th{
+    background-color: brown;
+    color:whitesmoke;
+}
+tr:nth-child(even){
+    background-color: lightcyan;
+}
+tr:nth-child(odd){
+    background-color: rgb(77, 158, 118)
+}
+td:hover{
+    background-color: pink;
+    color: blueviolet;
+    
+}
