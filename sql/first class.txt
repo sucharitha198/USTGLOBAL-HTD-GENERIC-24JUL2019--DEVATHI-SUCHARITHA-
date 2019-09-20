@@ -1,0 +1,1189 @@
+SYNTAX:
+
+TO SHOW DATABASE: show databases;
+TO CREATE DATABASE:create database databasename;
+TO USE PARTICULAR DB:use databasename;
+TO SHOW TABLE:show tables;
+TO COLUMNS :desc tableName;
+TO DELETE TABLE :drop table tableName;
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.05 sec)
+
+mysql> create database ustglobal;
+Query OK, 1 row affected (0.09 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| ustglobal          |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use ustglobal;
+Database changed
+mysql> show tables;
+Empty set (0.06 sec)
+
+mysql> create table student(id int,name varchar(120),emailId varchar(150));
+Query OK, 0 rows affected (1.30 sec)
+
+mysql> SHOW TABLES;
++---------------------+
+| Tables_in_ustglobal |
++---------------------+
+| student             |
++---------------------+
+1 row in set (0.03 sec)
+
+mysql> desc student;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | YES  |     | NULL    |       |
+| name    | varchar(120) | YES  |     | NULL    |       |
+| emailId | varchar(150) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+3 rows in set (0.22 sec)
+
+mysql> drop table student;
+Query OK, 0 rows affected (0.45 sec)
+
+mysql> drop database ustglobal;
+Query OK, 0 rows affected (0.39 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database ust;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| ust                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use ust;
+Database changed
+mysql> create table ust(id int,name varchar(50),number int);
+Query OK, 0 rows affected (0.41 sec)
+
+mysql> desc ust;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int(11)     | YES  |     | NULL    |       |
+| name   | varchar(50) | YES  |     | NULL    |       |
+| number | int(11)     | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.06 sec)
+
+mysql> drop table ust;
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> drop database ust;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> create database ust;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use ust;
+Database changed
+mysql> create table ust(id int,name varchar(50),number int);
+Query OK, 0 rows affected (0.27 sec)
+
+mysql> desc ust;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int(11)     | YES  |     | NULL    |       |
+| name   | varchar(50) | YES  |     | NULL    |       |
+| number | int(11)     | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> alter table ust
+    -> add emailId varchar(120);
+
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.17 sec)
+
+mysql> create database ust_global;
+Query OK, 1 row affected (0.16 sec)
+
+mysql> use ust_global;
+Database changed
+
+insert into employee_info values(101,'sucharitha','sucharitha@gmail.com','software developer',915412024,20,'1998-09-05','2019-10-01',29000,10,'O');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select * from employee_info;
++-----+------------+----------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name       | emailId              | designation        | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+------------+----------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| 101 | sucharitha | sucharitha@gmail.com | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |  29000 |     10 | O          |
++-----+------------+----------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+
+mysql> select * from employee_info;
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha   | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 102 | madhu vani   | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 110 | anusha       | anusha@gmail.com            | clerk              | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr                 | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai          | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
+| 114 | revanth      | revanth@gmail.com           | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+15 rows in set (0.00 sec)
+
+12-08-2019
+
+*WAQ to change the col.name bloodgroup to bg and dispay only id,name&blood group columns?
+
+mysql> select id,name,bloodGroup as bg from employee_info;
++-----+--------------+------+
+| id  | name         | bg   |
++-----+--------------+------+
+| 101 | sucharitha   | O    |
+| 102 | madhu vani   | O    |
+| 103 | harshini     | B    |
+| 104 | chandana     | A    |
+| 105 | sneha        | B    |
+| 106 | sreedhar     | O    |
+| 107 | rama lakshmi | B    |
+| 108 | sudha rani   | B    |
+| 109 | mounika      | A    |
+| 110 | anusha       | A    |
+| 111 | harsha       | B    |
+| 112 | swaroop      | o    |
+| 113 | sai          | A    |
+| 114 | revanth      | B    |
+| 115 | bhanu        | A    |
++-----+--------------+------+
+
+*WAQ to dispaly employee name , salary , designation ,and his annual salary?
++--------------+--------------------+----------+--------------------+
+| name         | designation        | salary   | salary*12          |
++--------------+--------------------+----------+--------------------+
+| sucharitha   | software developer |    29000 |             348000 |
+| madhu vani   | tester             |    22000 |             264000 |
+| harshini     | tester             |    25000 |             300000 |
+| chandana     | clerk              |    21000 |             252000 |
+| sneha        | sales man          |    18000 |             216000 |
+| sreedhar     | software developer | 49000.35 |           588004.2 |
+| rama lakshmi | analyst            | 20000.65 | 240007.80000000002 |
+| sudha rani   | hr                 |  22000.5 |             264006 |
+| mounika      | tester             |    19000 |             228000 |
+| anusha       | clerk              |    18000 |             216000 |
+| harsha       | hr                 |    58000 |             696000 |
+| swaroop      | software developer |    38000 |             456000 |
+| sai          | software developer |    61000 |             732000 |
+| revanth      | clerk              |    19000 |             228000 |
+| bhanu        | analyst            |    29000 |             348000 |
++--------------+--------------------+----------+--------------------+
+
+mysql> select name,designation,salary, salary*12 annualsal from employee_info;
++--------------+--------------------+----------+--------------------+
+| name         | designation        | salary   | annualsal           |
++--------------+--------------------+----------+--------------------+
+| sucharitha   | software developer |    29000 |             348000 |
+| madhu vani   | tester             |    22000 |             264000 |
+| harshini     | tester             |    25000 |             300000 |
+| chandana     | clerk              |    21000 |             252000 |
+| sneha        | sales man          |    18000 |             216000 |
+| sreedhar     | software developer | 49000.35 |           588004.2 |
+| rama lakshmi | analyst            | 20000.65 | 240007.80000000002 |
+| sudha rani   | hr                 |  22000.5 |             264006 |
+| mounika      | tester             |    19000 |             228000 |
+| anusha       | clerk              |    18000 |             216000 |
+| harsha       | hr                 |    58000 |             696000 |
+| swaroop      | software developer |    38000 |             456000 |
+| sai          | software developer |    61000 |             732000 |
+| revanth      | clerk              |    19000 |             228000 |
+| bhanu        | analyst            |    29000 |             348000 |
++--------------+--------------------+----------+--------------------+
+
+*WAQ to give the alias name for all the columns present in employye_info table?
+
+mysql> select id as empId,name as empName,emailId as email,designation as job_profile,mobileNo as number,age as experience,dob as dateofbirth,doj as joining,salary as monsal,deptId as dept_id,bloodGroup as bg from employee_info;
++-------+--------------+-----------------------------+--------------------+-----------+------------+-------------+------------+----------+---------+------+
+| empId | empName      | email                       | job_profile        | number    | experience | dateofbirth | joining    | monsal   | dept_id | bg   |
++-------+--------------+-----------------------------+--------------------+-----------+------------+-------------+------------+----------+---------+------+
+|   101 | sucharitha   | sucharitha@gmail.com        | software developer | 915412024 |         20 | 1998-09-05  | 2019-10-01 |    29000 |      10 | O    |
+|   102 | madhu vani   | madhuvani@gmail.com         | tester             | 995124741 |         20 | 1997-06-05  | 2019-12-10 |    22000 |      10 | O    |
+|   103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |         20 | 1997-01-12  | 2020-01-10 |    25000 |      40 | B    |
+|   104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |         21 | 1997-12-31  | 2020-02-10 |    21000 |      20 | A    |
+|   105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |         21 | 1997-03-12  | 2016-03-10 |    18000 |      30 | B    |
+|   106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |         22 | 1997-03-19  | 2016-02-15 | 49000.35 |      10 | O    |
+|   107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |         19 | 1997-07-04  | 2020-02-15 | 20000.65 |      30 | B    |
+|   108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |         19 | 1998-09-07  | 2019-06-15 |  22000.5 |      30 | B    |
+|   109 | mounika      | mounika@gmail.com           | tester             | 630104860 |         19 | 1996-03-12  | 2020-01-09 |    19000 |      20 | A    |
+|   110 | anusha       | anusha@gmail.com            | clerk              | 630516948 |         21 | 1997-05-31  | 2018-05-09 |    18000 |      10 | A    |
+|   111 | harsha       | harsha@gmail.com            | hr                 | 970543867 |         22 | 1997-10-24  | 2019-01-12 |    58000 |      10 | B    |
+|   112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |         26 | 1992-12-20  | 2010-05-09 |    38000 |      20 | o    |
+|   113 | sai          | shivasai@gmail.com          | software developer | 955053157 |         24 | 1994-03-02  | 2009-03-07 |    61000 |      10 | A    |
+|   114 | revanth      | revanth@gmail.com           | clerk              | 863959445 |         23 | 1996-05-09  | 2019-07-08 |    19000 |      20 | B    |
+|   115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |         22 | 1997-08-04  | 2018-11-04 |    29000 |      30 | A    |
++-------+--------------+-----------------------------+--------------------+-----------+------------+-------------+------------+----------+---------+------+
+
+*WAQ to display the unique deptno. from employee_info table?
+
+mysql> select distinct deptId from employee_info;
++--------+
+| deptId |
++--------+
+|     10 |
+|     20 |
+|     30 |
+|     40 |
++--------+
+
+if more than one argument is passed to distinct it will remove the combination of column duplicate.
+
+*WAQ to display diistinct deptId,designation from employee_info;
+
+mysql> select distinct deptId,designation from employee_info;
++--------+--------------------+
+| deptId | designation        |
++--------+--------------------+
+|     10 | software developer |
+|     10 | tester             |
+|     40 | tester             |
+|     20 | clerk              |
+|     30 | sales man          |
+|     30 | analyst            |
+|     30 | hr                 |
+|     20 | tester             |
+|     10 | clerk              |
+|     10 | hr                 |
+|     20 | software developer |
++--------+--------------------+
+
+*WAQ to dispaly distinct age,dept id ,designation from employee_info;
+
+mysql> select distinct deptId,designation,age from employee_info;
++--------+--------------------+------+
+| deptId | designation        | age  |
++--------+--------------------+------+
+|     10 | software developer |   20 |
+|     10 | tester             |   20 |
+|     40 | tester             |   20 |
+|     20 | clerk              |   21 |
+|     30 | sales man          |   21 |
+|     10 | software developer |   22 |
+|     30 | analyst            |   19 |
+|     30 | hr                 |   19 |
+|     20 | tester             |   19 |
+|     10 | clerk              |   21 |
+|     10 | hr                 |   22 |
+|     20 | software developer |   26 |
+|     10 | software developer |   24 |
+|     20 | clerk              |   23 |
+|     30 | analyst            |   22 |
++--------+--------------------+------+
+
+*WAQ  to dispaly the name, salary whose sal increment by 5000?
+
+mysql> select name,salary, salary+5000 from employee_info;
++--------------+----------+-------------+
+| name         | salary   | salary+5000 |
++--------------+----------+-------------+
+| sucharitha   |    29000 |       34000 |
+| madhu vani   |    22000 |       27000 |
+| harshini     |    25000 |       30000 |
+| chandana     |    21000 |       26000 |
+| sneha        |    18000 |       23000 |
+| sreedhar     | 49000.35 |    54000.35 |
+| rama lakshmi | 20000.65 |    25000.65 |
+| sudha rani   |  22000.5 |     27000.5 |
+| mounika      |    19000 |       24000 |
+| anusha       |    18000 |       23000 |
+| harsha       |    58000 |       63000 |
+| swaroop      |    38000 |       43000 |
+| sai          |    61000 |       66000 |
+| revanth      |    19000 |       24000 |
+| bhanu        |    29000 |       34000 |
++--------------+----------+-------------+
+
+*WAQ  to dispaly the name, salary whose sal decrement by 5000?
+mysql> select name,salary, salary-5000 from employee_info;
++--------------+----------+--------------------+
+| name         | salary   | salary-5000        |
++--------------+----------+--------------------+
+| sucharitha   |    29000 |              24000 |
+| madhu vani   |    22000 |              17000 |
+| harshini     |    25000 |              20000 |
+| chandana     |    21000 |              16000 |
+| sneha        |    18000 |              13000 |
+| sreedhar     | 49000.35 |           44000.35 |
+| rama lakshmi | 20000.65 | 15000.650000000001 |
+| sudha rani   |  22000.5 |            17000.5 |
+| mounika      |    19000 |              14000 |
+| anusha       |    18000 |              13000 |
+| harsha       |    58000 |              53000 |
+| swaroop      |    38000 |              33000 |
+| sai          |    61000 |              56000 |
+| revanth      |    19000 |              14000 |
+| bhanu        |    29000 |              24000 |
++--------------+----------+--------------------+
+
+*WAQ  to dispaly the name, salary and annual salary?
+mysql> select name,salary, salary*12 from employee_info;
++--------------+----------+--------------------+
+| name         | salary   | salary*12          |
++--------------+----------+--------------------+
+| sucharitha   |    29000 |             348000 |
+| madhu vani   |    22000 |             264000 |
+| harshini     |    25000 |             300000 |
+| chandana     |    21000 |             252000 |
+| sneha        |    18000 |             216000 |
+| sreedhar     | 49000.35 |           588004.2 |
+| rama lakshmi | 20000.65 | 240007.80000000002 |
+| sudha rani   |  22000.5 |             264006 |
+| mounika      |    19000 |             228000 |
+| anusha       |    18000 |             216000 |
+| harsha       |    58000 |             696000 |
+| swaroop      |    38000 |             456000 |
+| sai          |    61000 |             732000 |
+| revanth      |    19000 |             228000 |
+| bhanu        |    29000 |             348000 |
++--------------+----------+--------------------+
+
+*WAQ  to dispaly the name, salary and daily salary?
+mysql> select name,salary, salary/30 from employee_info;
++--------------+----------+--------------------+
+| name         | salary   | salary/30          |
++--------------+----------+--------------------+
+| sucharitha   |    29000 |  966.6666666666666 |
+| madhu vani   |    22000 |  733.3333333333334 |
+| harshini     |    25000 |  833.3333333333334 |
+| chandana     |    21000 |                700 |
+| sneha        |    18000 |                600 |
+| sreedhar     | 49000.35 |           1633.345 |
+| rama lakshmi | 20000.65 |  666.6883333333334 |
+| sudha rani   |  22000.5 |             733.35 |
+| mounika      |    19000 |  633.3333333333334 |
+| anusha       |    18000 |                600 |
+| harsha       |    58000 | 1933.3333333333333 |
+| swaroop      |    38000 | 1266.6666666666667 |
+| sai          |    61000 | 2033.3333333333333 |
+| revanth      |    19000 |  633.3333333333334 |
+| bhanu        |    29000 |  966.6666666666666 |
++--------------+----------+--------------------+
+
+*WAQ to display all the records excluding deptno 10?
+mysql> select * from employee_info where deptId!=10;
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 114 | revanth      | revanth@gmail.com           | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+
+
+mysql> select * from employee_info where deptId>10;
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 114 | revanth      | revanth@gmail.com           | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+
+
+*WAQ to display name,designation,age,mobileno whose sal is greater than 5000?
+mysql> select name,designation,mobileNo,age from employee_info where salary>5000;
++--------------+--------------------+-----------+------+
+| name         | designation        | mobileNo  | age  |
++--------------+--------------------+-----------+------+
+| sucharitha   | software developer | 915412024 |   20 |
+| madhu vani   | tester             | 995124741 |   20 |
+| harshini     | tester             | 958192669 |   20 |
+| chandana     | clerk              | 707530489 |   21 |
+| sneha        | sales man          | 879003212 |   21 |
+| sreedhar     | software developer | 798155879 |   22 |
+| rama lakshmi | analyst            | 798194785 |   19 |
+| sudha rani   | hr                 | 814329043 |   19 |
+| mounika      | tester             | 630104860 |   19 |
+| anusha       | clerk              | 630516948 |   21 |
+| harsha       | hr                 | 970543867 |   22 |
+| swaroop      | software developer | 996361261 |   26 |
+| sai          | software developer | 955053157 |   24 |
+| revanth      | clerk              | 863959445 |   23 |
+| bhanu        | analyst            | 630184652 |   22 |
++--------------+--------------------+-----------+------+
+ 
+*WAQ to display name,designation,age,mobileno whose sal is less than 5000?
+Empty set (0.00 sec)
+
+*WAQ to display the salary <=12000?
+Empty set (0.00 sec)
+
+*WAQ to display the salary >=40000?
+mysql> select name,designation,mobileNo,age from employee_info where salary>=40000;
++----------+--------------------+-----------+------+
+| name     | designation        | mobileNo  | age  |
++----------+--------------------+-----------+------+
+| sreedhar | software developer | 798155879 |   22 |
+| harsha   | hr                 | 970543867 |   22 |
+| sai      | software developer | 955053157 |   24 |
++----------+--------------------+-----------+------+
+
+=======================================================================================================================================================================
+                                                     LOGICAL OPERATORS
+
+*WAQ to dispaly all the record who is working in dept_id 20 only if sal >10,000?
+mysql> select * from employee_info where deptId=20 and salary>10000;
++-----+----------+------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name     | emailId                | designation        | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+----------+------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| 104 | chandana | manichandana@gmail.com | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |  21000 |     20 | A          |
+| 109 | mounika  | mounika@gmail.com      | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |  19000 |     20 | A          |
+| 112 | swaroop  | swaroop@gmail.com      | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |  38000 |     20 | o          |
+| 114 | revanth  | revanth@gmail.com      | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |  19000 |     20 | B          |
++-----+----------+------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+
+*WAQ to display all the records of employee_info who is working as salesman and dob is 1994?
+
+
+
+*WAQ to dispaly all the records of employee_info table whose salary=29,000 and job is analyst?
+mysql> select * from employee_info where salary=29000 and designation='analyst';
++-----+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name  | emailId         | designation | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| 115 | bhanu | bhanu@gmail.com | analyst     | 630184652 |   22 | 1997-08-04 | 2018-11-04 |  29000 |     30 | A          |
++-----+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+*WAQ to dislay all the records who is working in deptId 20 or deptId 60?
+mysql> select * from employee_info where deptId=20 or deptId=60;
++-----+----------+------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name     | emailId                | designation        | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+----------+------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| 104 | chandana | manichandana@gmail.com | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |  21000 |     20 | A          |
+| 109 | mounika  | mounika@gmail.com      | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |  19000 |     20 | A          |
+| 112 | swaroop  | swaroop@gmail.com      | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |  38000 |     20 | o          |
+| 114 | revanth  | revanth@gmail.com      | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |  19000 |     20 | B          |
++-----+----------+------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+4 rows in set (0.00 sec)
+
+*WAQ to display name,salary,emailId who is working as a tester or age>20?
+mysql> select name,salary,emailId from employee_info where age>20 or designation='tester';
++------------+----------+-----------------------------+
+| name       | salary   | emailId                     |
++------------+----------+-----------------------------+
+| madhu vani |    22000 | madhuvani@gmail.com         |
+| harshini   |    25000 | harshinimuddaluru@gmail.com |
+| chandana   |    21000 | manichandana@gmail.com      |
+| sneha      |    18000 | namburusnehalatha@gmail.com |
+| sreedhar   | 49000.35 | sreedharsmrt@gmail.com      |
+| mounika    |    19000 | mounika@gmail.com           |
+| anusha     |    18000 | anusha@gmail.com            |
+| harsha     |    58000 | harsha@gmail.com            |
+| swaroop    |    38000 | swaroop@gmail.com           |
+| sai        |    61000 | shivasai@gmail.com          |
+| revanth    |    19000 | revanth@gmail.com           |
+| bhanu      |    29000 | bhanu@gmail.com             |
++------------+----------+-----------------------------+
+12 rows in set (0.00 sec)
+
+*WAQ to display the name of all employee who is working as a hr in deptId 30 or who is clerk where salary>10000?
+
+mysql> select * from employee_info where (designation ='hr' and deptId = 30 ) or (designation = 'clerk' and salary>10000);
+
+mysql> select * from employee_info where designation ='hr' and deptId = 30  or designation = 'clerk' and salary>10000;
++-----+------------+------------------------+-------------+-----------+------+------------+------------+---------+--------+------------+
+| id  | name       | emailId                | designation | mobileNo  | age  | dob        | doj        | salary  | deptId | bloodGroup |
++-----+------------+------------------------+-------------+-----------+------+------------+------------+---------+--------+------------+
+| 104 | chandana   | manichandana@gmail.com | clerk       | 707530489 |   21 | 1997-12-31 | 2020-02-10 |   21000 |     20 | A          |
+| 108 | sudha rani | sudharani@gmail.com    | hr          | 814329043 |   19 | 1998-09-07 | 2019-06-15 | 22000.5 |     30 | B          |
+| 110 | anusha     | anusha@gmail.com       | clerk       | 630516948 |   21 | 1997-05-31 | 2018-05-09 |   18000 |     10 | A          |
+| 114 | revanth    | revanth@gmail.com      | clerk       | 863959445 |   23 | 1996-05-09 | 2019-07-08 |   19000 |     20 | B          |
++-----+------------+------------------------+-------------+-----------+------+------------+------------+---------+--------+------------+
+4 rows in set (0.00 sec)
+
+*WAQ to display salary >10000 and designation software developer?
+mysql> select * from employee_info where salary>10000 and designation='software developer';
++-----+------------+------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name       | emailId                | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+------------+------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha | sucharitha@gmail.com   | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 106 | sreedhar   | sreedharsmrt@gmail.com | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 112 | swaroop    | swaroop@gmail.com      | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai        | shivasai@gmail.com     | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
++-----+------------+------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+4 rows in set (0.00 sec)
+
+*WAQ to display all records except the designation not equal to software developer?
+
+mysql> select * from employee_info where not  designation='software developer';
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| 102 | madhu vani   | madhuvani@gmail.com         | tester      | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester      | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk       | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man   | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst     | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr          | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester      | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 110 | anusha       | anusha@gmail.com            | clerk       | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr          | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 114 | revanth      | revanth@gmail.com           | clerk       | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst     | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+11 rows in set (0.05 sec)
+
+mysql> select * from employee_info where designation<>'software developer';
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| 102 | madhu vani   | madhuvani@gmail.com         | tester      | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester      | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk       | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man   | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst     | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr          | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester      | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 110 | anusha       | anusha@gmail.com            | clerk       | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr          | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 114 | revanth      | revanth@gmail.com           | clerk       | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst     | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+11 rows in set (0.00 sec)
+
+mysql> select * from employee_info where designation!='software developer';
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| 102 | madhu vani   | madhuvani@gmail.com         | tester      | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester      | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk       | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man   | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst     | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr          | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester      | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 110 | anusha       | anusha@gmail.com            | clerk       | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr          | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 114 | revanth      | revanth@gmail.com           | clerk       | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst     | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+11 rows in set (0.00 sec)
+*WAQ to display all the employee excluding deptno 20 or 30?
+mysql> select * from employee_info where not (deptId=20 or deptId=30);
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name       | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 102 | madhu vani | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini   | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 106 | sreedhar   | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 110 | anusha     | anusha@gmail.com            | clerk              | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 111 | harsha     | harsha@gmail.com            | hr                 | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 113 | sai        | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+7 rows in set (0.00 sec)
+
+*WAQ to display all the employee details excluding salesman and who all are working in deptId40?
+mysql> select * from employee_info where not (designation='salesman' and deptId=40);
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha   | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 102 | madhu vani   | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 110 | anusha       | anusha@gmail.com            | clerk              | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr                 | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai          | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
+| 114 | revanth      | revanth@gmail.com           | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+15 rows in set (0.00 sec)
+
+*WAQ to display all the employee details who is working as a salesman for deptId 20 or 30?
+mysql> select * from employee_info where designation='sales man' and (deptId=20 or deptId=30);
++-----+-------+-----------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name  | emailId                     | designation | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+-------+-----------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| 105 | sneha | namburusnehalatha@gmail.com | sales man   | 879003212 |   21 | 1997-03-12 | 2016-03-10 |  18000 |     30 | B          |
++-----+-------+-----------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+
+*WAQ to display all the employee who is working in deptno 20 only if their salary is >10000 and <25000 including 10000 and 250000?
+mysql> select * from employee_info where deptId=20 and salary>=10000 and salary<=25000;
++-----+----------+------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name     | emailId                | designation | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+----------+------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| 104 | chandana | manichandana@gmail.com | clerk       | 707530489 |   21 | 1997-12-31 | 2020-02-10 |  21000 |     20 | A          |
+| 109 | mounika  | mounika@gmail.com      | tester      | 630104860 |   19 | 1996-03-12 | 2020-01-09 |  19000 |     20 | A          |
+| 114 | revanth  | revanth@gmail.com      | clerk       | 863959445 |   23 | 1996-05-09 | 2019-07-08 |  19000 |     20 | B          |
++-----+----------+------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
+
+*WAQ to display all the records who is working as a software developer and dob is 1994?
+mysql> select * from employee_info where designation='software developer' and dob>'1994-01-01' and dob<'1994-12-31';
++-----+------+--------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name | emailId            | designation        | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+------+--------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| 113 | sai  | shivasai@gmail.com | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |  61000 |     10 | A          |
++-----+------+--------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+
+*WAQ to display the employee who is working in deptid 10 or 20 0r 30?
+mysql> select * from employee_info where deptId=20 or deptid=30 or deptId=10;
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha   | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 102 | madhu vani   | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 110 | anusha       | anusha@gmail.com            | clerk              | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr                 | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai          | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
+| 114 | revanth      | revanth@gmail.com           | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+14 rows in set (0.00 sec)
+
+=======================================================================================================================================================================
+                                                                        SPECIAL OPERATORS
+
+*WAQ to display the employee who is working in deptid 10 or 20 0r 30?
+mysql> select * from employee_info where deptId in(10,20,30);
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha   | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 102 | madhu vani   | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 110 | anusha       | anusha@gmail.com            | clerk              | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr                 | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai          | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
+| 114 | revanth      | revanth@gmail.com           | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+14 rows in set (0.13 sec)
+
+*WAQ to display all the employee details whose job designation is hr,tester,analyst?
+mysql> select * from employee_info where designation in ('hr','tester','analyst');
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| 102 | madhu vani   | madhuvani@gmail.com         | tester      | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester      | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst     | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr          | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester      | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr          | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst     | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+7 rows in set (0.00 sec)
+
+
+*WAQ to display all the employee details who are working as a clerk in dept 20,30, 40,60,70?
+mysql> select * from employee_info where designation='clerk' and deptId in (20,30,40,60,70);
++-----+----------+------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name     | emailId                | designation | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+----------+------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| 104 | chandana | manichandana@gmail.com | clerk       | 707530489 |   21 | 1997-12-31 | 2020-02-10 |  21000 |     20 | A          |
+| 114 | revanth  | revanth@gmail.com      | clerk       | 863959445 |   23 | 1996-05-09 | 2019-07-08 |  19000 |     20 | B          |
++-----+----------+------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+2 rows in set (0.00 sec)
+
+
+*WAQ to display all the employee details who are working as a clerk and not in  dept 20,30, 40,60,70?
+mysql> select * from employee_info where designation='clerk' and deptId not  in (20,30,40,60,70);
++-----+--------+------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name   | emailId          | designation | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+--------+------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| 110 | anusha | anusha@gmail.com | clerk       | 630516948 |   21 | 1997-05-31 | 2018-05-09 |  18000 |     10 | A          |
++-----+--------+------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+1 row in set (0.09 sec)
+
+
+*WAQ to display all the details of employee who are working in dept 20,40,60 excluding the salesman or analyst?
+mysql> select * from employee_info where deptId in (20,40,60) and designation not in ('salesman','analyst');
++-----+----------+-----------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name     | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+----------+-----------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+| 103 | harshini | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |  25000 |     40 | B          |
+| 104 | chandana | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |  21000 |     20 | A          |
+| 109 | mounika  | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |  19000 |     20 | A          |
+| 112 | swaroop  | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |  38000 |     20 | o          |
+| 114 | revanth  | revanth@gmail.com           | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |  19000 |     20 | B          |
++-----+----------+-----------------------------+--------------------+-----------+------+------------+------------+--------+--------+------------+
+5 rows in set (0.00 sec)
+
+
+*WAQ to display all the  detail of employee whose salary i the range of 20000 to 50000?
+mysql> select * from employee_info where salary between 20000 and 50000;
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha   | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 102 | madhu vani   | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+9 rows in set (0.08 sec)
+ 
+
+*WAQ to display all the details of employee who have  hired during 2017?
+mysql> select * from employee_info where doj between '2017-01-01' and '2017-12-31';
+Empty set (0.36 sec)
+
+
+*WAQ to display all the details of employee excluding who is hired in 2019?
+mysql> select * from employee_info where doj not between '2019-01-01' and '2019-12-31';
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 110 | anusha       | anusha@gmail.com            | clerk              | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai          | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+10 rows in set (0.00 sec)
+
+
+*WAQ to display employee name , salary and deptId of all employees who are working in deptId 10 and 20 excluding employee whose salary >= 15000 and sal <=50000?
+mysql> select name,salary,deptid from employee_info where deptId in (10,20) and salary not between 15000 and 50000;
++--------+--------+--------+
+| name   | salary | deptid |
++--------+--------+--------+
+| harsha |  58000 |     10 |
+| sai    |  61000 |     10 |
++--------+--------+--------+
+2 rows in set (0.00 sec)
+
+
+*WAQ to display employee name , anual salary if his designation is null?
+mysql> select name,salary*12 from employee_info where designation is null;
++---------+-----------+
+| name    | salary*12 |
++---------+-----------+
+| shanthi |      NULL |
++---------+-----------+
+1 row in set (0.06 sec)
+
+
+*WAQ to display employee name , anual salary if his designation is not null?
+mysql> select name,salary*12 from employee_info where designation is not null;
++--------------+--------------------+
+| name         | salary*12          |
++--------------+--------------------+
+| sucharitha   |             348000 |
+| madhu vani   |             264000 |
+| harshini     |             300000 |
+| chandana     |             252000 |
+| sneha        |             216000 |
+| sreedhar     |           588004.2 |
+| rama lakshmi | 240007.80000000002 |
+| sudha rani   |             264006 |
+| mounika      |             228000 |
+| anusha       |             216000 |
+| harsha       |             696000 |
+| swaroop      |             456000 |
+| sai          |             732000 |
+| revanth      |             228000 |
+| bhanu        |             348000 |
++--------------+--------------------+
+15 rows in set (0.00 sec)
+
+
+*WAQ to display all the details of employee whose name start with s?
+mysql> select * from employee_info where name like 's%';
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name       | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 105 | sneha      | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 106 | sreedhar   | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 108 | sudha rani | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 112 | swaroop    | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai        | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
+| 116 | shanthi    | shanthi@gmail.com           | NULL               |      NULL |   27 | 1993-06-01 | NULL       |     NULL |   NULL | AB+        |
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+7 rows in set (0.11 sec)
+
+
+*WAQ to display all the detail of the employee whose name contain 5 characters?
+mysql> select * from employee_info where name like '_____';
++-----+-------+-----------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| id  | name  | emailId                     | designation | mobileNo  | age  | dob        | doj        | salary | deptId | bloodGroup |
++-----+-------+-----------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+| 105 | sneha | namburusnehalatha@gmail.com | sales man   | 879003212 |   21 | 1997-03-12 | 2016-03-10 |  18000 |     30 | B          |
+| 115 | bhanu | bhanu@gmail.com             | analyst     | 630184652 |   22 | 1997-08-04 | 2018-11-04 |  29000 |     30 | A          |
++-----+-------+-----------------------------+-------------+-----------+------+------------+------------+--------+--------+------------+
+2 rows in set (0.00 sec)
+
+
+*WAQ to display name,salary,dob,doj,age whose name start with s and end with s?
+mysql> select name,age,salary,dob,doj from employee_info where name like 's%s';
+Empty set (0.00 sec)
+
+
+*WAQ to display all the record of employee whose second character is p?
+mysql> select * from employee_info where name like '_p%';
+Empty set (0.00 sec)
+
+
+*WAQ to display all the information of the employee where designation have atleast ee?
+mysql> select * from employee_info where designation like '%e%e%';
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name       | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 102 | madhu vani | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini   | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 106 | sreedhar   | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 109 | mounika    | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 112 | swaroop    | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai        | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
++-----+------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+7 rows in set (0.00 sec)
+
+
+*WAQ to select all the string of length 5 that name start with s and the last but one character is l?
+mysql> select * from employee_info where name like'_____' and name like 's%l_';
+Empty set (0.02 sec)
+mysql> select * from employee_info where name like 's__l_';
+Empty set (0.02 sec)
+
+
+*WAQ to display all the detail of employee if the name of employee start with r character or start with z?
+mysql> select * from employee_info where name like 'r%' or name like 'z%';
++-----+--------------+-----------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId               | designation | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+| 107 | rama lakshmi | ramalakshmi@gmail.com | analyst     | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 114 | revanth      | revanth@gmail.com     | clerk       | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
++-----+--------------+-----------------------+-------------+-----------+------+------------+------------+----------+--------+------------+
+2 rows in set (0.02 sec)
+=================================================================================================================================================================
+       *********************SHOULDN'T USE        select * from employee_info where designation like in ('e%e',%e%e);************************************************
+=================================================================================================================================================================
+
+
+*WAQ to display all the record of employees whose name the 3rd character should be 'c' and 6th character should be 'i'?
+mysql> select * from employee_info where name like'__c__i%';
+Empty set (0.01 sec)
+
+
+*WAQ to display all the record of employees excluding whose name start with 'a'?
+mysql> select * from employee_info where name not like'a%';
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 101 | sucharitha   | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 102 | madhu vani   | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr                 | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 113 | sai          | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
+| 114 | revanth      | revanthsteyn@gmail.com      | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
+| 116 | shanthi      | shanthi@gmail.com           | NULL               |      NULL |   27 | 1993-06-01 | NULL       |     NULL |   NULL | AB+        |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+15 rows in set (0.01 sec)
+
+=======================================================================================================================================================================
+                                                  GROUP BY CLAUSE 
+
+*WAQ to display highest salary of employee in each department?
+mysql> select max(salary) from employee_info group by deptId;
++-------------+
+| max(salary) |
++-------------+
+|        NULL |
+|       61000 |
+|       38000 |
+|       29000 |
+|       25000 |
++-------------+
+5 rows in set (0.00 sec) 
+
+
+*WAQ to display no. of sftwr developer wkng in each dept?
+mysql> select count(*) from employee_info where designation='software developer' group by deptId;
++----------+
+| count(*) |
++----------+
+|        3 |
+|        1 |
++----------+
+2 rows in set (0.00 sec)
+
+*WAQ to display no. of employees hired on each date?
+mysql> select count(*) from employee_info group by doj;
++----------+
+| count(*) |
++----------+
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
++----------+
+16 rows in set (0.00 sec)
+
+
+*WAQ to display min sal in each designation?
+mysql> select min(salary),designation from employee_info group by designation;
++-------------+--------------------+
+| min(salary) | designation        |
++-------------+--------------------+
+|        NULL | NULL               |
+|    20000.65 | analyst            |
+|       18000 | clerk              |
+|     22000.5 | hr                 |
+|       18000 | sales man          |
+|       29000 | software developer |
+|       19000 | tester             |
++-------------+--------------------+
+7 rows in set (0.00 sec)
+=====================================================================================================================================================================
+                                                  HAVING CLAUSE
+
+*WAQ to display deptno which has atleast 4 wkng employee?
+mysql> select deptId from employee_info  group by deptId having count(*)>=4;
++--------+
+| deptId |
++--------+
+|     10 |
+|     20 |
+|     30 |
++--------+
+3 rows in set (0.00 sec)
+
+*WAQ to display deptId employees which has total salary >20000?
+mysql> select deptId,sum(salary) from employee_info group by deptId having sum(salary)>20000;
++--------+-------------+
+| deptId | sum(salary) |
++--------+-------------+
+|     10 |   237000.35 |
+|     20 |       97000 |
+|     30 |    89001.15 |
+|     40 |       25000 |
++--------+-------------+
+4 rows in set (0.00 sec)
+
+
+*WAQ to display deptno &avg sal of all the depts whose avg sal is >20000 excluding the employee whose name begin with 's'?
+mysql> select deptId,avg(salary) from employee_info where name not like 's%' group by deptId having avg(salary)>20000;
++--------+--------------------+
+| deptId | avg(salary)        |
++--------+--------------------+
+|     10 | 32666.666666666668 |
+|     30 |          24500.325 |
+|     40 |              25000 |
++--------+--------------------+
+3 rows in set (0.09 sec)
+
+
+*WAQ to display all the results of the employee table salary should be arranged in descending order?
+mysql> select * from employee_info order by salary desc;
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| id  | name         | emailId                     | designation        | mobileNo  | age  | dob        | doj        | salary   | deptId | bloodGroup |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+| 113 | sai          | shivasai@gmail.com          | software developer | 955053157 |   24 | 1994-03-02 | 2009-03-07 |    61000 |     10 | A          |
+| 111 | harsha       | harsha@gmail.com            | hr                 | 970543867 |   22 | 1997-10-24 | 2019-01-12 |    58000 |     10 | B          |
+| 106 | sreedhar     | sreedharsmrt@gmail.com      | software developer | 798155879 |   22 | 1997-03-19 | 2016-02-15 | 49000.35 |     10 | O          |
+| 112 | swaroop      | swaroop@gmail.com           | software developer | 996361261 |   26 | 1992-12-20 | 2010-05-09 |    38000 |     20 | o          |
+| 101 | sucharitha   | sucharitha@gmail.com        | software developer | 915412024 |   20 | 1998-09-05 | 2019-10-01 |    29000 |     10 | O          |
+| 115 | bhanu        | bhanu@gmail.com             | analyst            | 630184652 |   22 | 1997-08-04 | 2018-11-04 |    29000 |     30 | A          |
+| 103 | harshini     | harshinimuddaluru@gmail.com | tester             | 958192669 |   20 | 1997-01-12 | 2020-01-10 |    25000 |     40 | B          |
+| 108 | sudha rani   | sudharani@gmail.com         | hr                 | 814329043 |   19 | 1998-09-07 | 2019-06-15 |  22000.5 |     30 | B          |
+| 102 | madhu vani   | madhuvani@gmail.com         | tester             | 995124741 |   20 | 1997-06-05 | 2019-12-10 |    22000 |     10 | O          |
+| 104 | chandana     | manichandana@gmail.com      | clerk              | 707530489 |   21 | 1997-12-31 | 2020-02-10 |    21000 |     20 | A          |
+| 107 | rama lakshmi | ramalakshmi@gmail.com       | analyst            | 798194785 |   19 | 1997-07-04 | 2020-02-15 | 20000.65 |     30 | B          |
+| 109 | mounika      | mounika@gmail.com           | tester             | 630104860 |   19 | 1996-03-12 | 2020-01-09 |    19000 |     20 | A          |
+| 114 | revanth      | revanthsteyn@gmail.com      | clerk              | 863959445 |   23 | 1996-05-09 | 2019-07-08 |    19000 |     20 | B          |
+| 105 | sneha        | namburusnehalatha@gmail.com | sales man          | 879003212 |   21 | 1997-03-12 | 2016-03-10 |    18000 |     30 | B          |
+| 110 | anusha       | anusha@gmail.com            | clerk              | 630516948 |   21 | 1997-05-31 | 2018-05-09 |    18000 |     10 | A          |
+| 116 | shanthi      | shanthi@gmail.com           | NULL               |      NULL |   27 | 1993-06-01 | NULL       |     NULL |   NULL | AB+        |
++-----+--------------+-----------------------------+--------------------+-----------+------+------------+------------+----------+--------+------------+
+16 rows in set (0.36 sec)
+
+
+*WAQ to display employee name,designation ,doj for all employees who are wkng in either one of the department 10,20,50,60 and sort the records in the desc order of their sal?
+mysql> select name,designation,doj from  employee_info where deptId in (10,20,50,60) order by salary desc;
++------------+--------------------+------------+
+| name       | designation        | doj        |
++------------+--------------------+------------+
+| sai        | software developer | 2009-03-07 |
+| harsha     | hr                 | 2019-01-12 |
+| sreedhar   | software developer | 2016-02-15 |
+| swaroop    | software developer | 2010-05-09 |
+| sucharitha | software developer | 2019-10-01 |
+| madhu vani | tester             | 2019-12-10 |
+| chandana   | clerk              | 2020-02-10 |
+| mounika    | tester             | 2020-01-09 |
+| revanth    | clerk              | 2019-07-08 |
+| anusha     | clerk              | 2018-05-09 |
++------------+--------------------+------------+
+10 rows in set (0.00 sec)
+
+*WAQ to display deptId along with no. of employee in it?
+mysql> select count(*) from employee_info group by deptId;
++----------+
+| count(*) |
++----------+
+|        1 |
+|        6 |
+|        4 |
+|        4 |
+|        1 |
++----------+
+5 rows in set (0.01 sec)
+
+*WAQ to display all the detail of the employee whose designation is tester and sftwr devlpr?
+select * from employee_info
+where designation in ('software developer','tester' )
+
+
+=====================================================================================================================================================================
+                                                    JOINS
+*WAQ to display all the records using cross join?
+mysql> select * from employee_info cross join department_info;
+
+				*******************************************************
+					INNER JOINS
+*WAQ to display 
+mysql> select * from employee_info e inner join department_info d on e.deptId=d.deptId;
+				*******************************************************
+					LEFT OUTER JOINS
+
+*WAQ to display
+mysql> select * from employee_info e left outer join department_info d on e.deptId=d.deptId;
+
+				*******************************************************
+					RIGHT OUTER JOINS
+
+*WAQ to display
+mysql> select * from employee_info e right outer join department_info d on e.deptId=d.deptId;
+
+*WAQ to display
+
+
+*WAQ to display 
+
+
+*WAQ to display
+
+
+*WAQ to display
+
+
+*WAQ to display
