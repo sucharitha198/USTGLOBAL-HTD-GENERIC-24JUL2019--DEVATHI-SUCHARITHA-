@@ -1,0 +1,24 @@
+<table class="table table-bordered table-hover mt-5">
+    <thead class="thead-dark">
+        <th>Id</th>
+        <th>Name</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Website</th>
+        <th class='text-center'colspan='4'>Address</th>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor='let i of user'>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.username}}</td>
+        <td> {{i.email}}</td>
+        <td>{{i.website}}</td>
+        <td>{{i.address.street}} <br>
+         {{i.address.suite}}<br>
+         {{i.address.city}}<br>
+         {{i.address.ipcode}}</td>
+        </tr>
+    </tbody>
+</table>

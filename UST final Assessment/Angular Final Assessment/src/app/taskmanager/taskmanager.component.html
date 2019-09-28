@@ -1,0 +1,17 @@
+<div class="col-md-4 offset-3 mt-3 card card-body">
+    <form action="" method="" role="form" #form='ngForm'  (ngSubmit)='print(form.value)'>
+        <h4 class="text-center"> ADD TASK!!!!</h4>
+    
+        <div class="form-group">
+            <label for="">TASK NAME</label>
+            <input type="text" name="name" class="form-control" #name='ngModel' ngModel id="" placeholder="Enter Name">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+        
+</div>
+<ul *ngFor= 'let i of users'>
+    <li>{{i.name}}</li>
+    <li (click)='delete(i)'> <button type="submit" class="btn btn-danger">Delete</button></li>
+</ul>
